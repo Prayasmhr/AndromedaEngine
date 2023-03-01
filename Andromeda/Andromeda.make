@@ -19,8 +19,8 @@ endif
 # #############################################
 
 RESCOMP = windres
-DEFINES += -D_WIN32 -DANDROMEDA_BUILD
-INCLUDES += -Iinclude
+DEFINES += -DANDROMEDA_WINDOWS_SYSTEM -DANDROMEDA_BUILD
+INCLUDES += -Iinclude -I../vendor/spdlog/include
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
@@ -63,7 +63,9 @@ GENERATED :=
 OBJECTS :=
 
 GENERATED += $(OBJDIR)/Application.o
+GENERATED += $(OBJDIR)/Log.o
 OBJECTS += $(OBJDIR)/Application.o
+OBJECTS += $(OBJDIR)/Log.o
 
 # Rules
 # #############################################
@@ -128,6 +130,9 @@ endif
 # #############################################
 
 $(OBJDIR)/Application.o: src/Application.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/Log.o: src/Log.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

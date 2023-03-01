@@ -4,23 +4,35 @@
     <Filter Include="include">
       <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Andromeda">
+      <UniqueIdentifier>{0331CF11-6F47-CDA7-B8BE-58C924149E2F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Application.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\Andromeda\Andromeda.h">
+      <Filter>include\Andromeda</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\Andromeda\Application.h">
+      <Filter>include\Andromeda</Filter>
     </ClInclude>
-    <ClInclude Include="include\EntryPoint.h">
-      <Filter>include</Filter>
+    <ClInclude Include="include\Andromeda\Core.h">
+      <Filter>include\Andromeda</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Andromeda\EntryPoint.h">
+      <Filter>include\Andromeda</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Andromeda\Log.h">
+      <Filter>include\Andromeda</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Log.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,6 @@
 #include<Andromeda/Andromeda.h>
 
-using namespace AE;
+using namespace AE::Core;
 
 class Sandbox2D : public Application{
 
@@ -9,15 +9,11 @@ public:
     ~Sandbox2D(){}
 
     void Update() override{
-        string q;
-        std::getline(std::cin,q);
-        if(q == "q"){
-            m_running = false;
-        }
+        
     }
 private:
 };
 
-AE::Application* AE::createApplication(){
+AE::Core::Application* AE::Core::createApplication(){
     return new Sandbox2D();
 }
